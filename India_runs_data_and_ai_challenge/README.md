@@ -58,6 +58,8 @@ Submit via the portal. You'll be asked for:
 ·         See submission_spec.md Section 10 for the full list
 Sandbox link is required — a working hosted environment (HuggingFace Spaces, Streamlit Cloud, Replit, Colab, Docker, or Binder) where your ranker can be run on a small sample. See Section 10.5 for what counts as a valid sandbox.
 
+sandbox link : https://huggingface.co/spaces/Piyushh250/redrob-ranker
+
 # Key things to know
 
 ·         No live leaderboard. Scores are revealed only after submissions close. There is no feedback during the competition.
