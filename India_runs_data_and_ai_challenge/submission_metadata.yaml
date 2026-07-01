@@ -1,0 +1,71 @@
+team_name: "Bravo"
+
+primary_contact:
+  name: "Piyush Kumar"
+  email: "Piyushkumar20033@gmail.com"
+  phone: "+91-8595558921"
+
+team_members:
+  - name: "Aman Ranjan"
+    email: "amananuj01@gmail.com"
+    role: "Product Developer"
+
+  - name: "Prince Kumar"
+    email: "prince21182@iiitd.ac.in"
+    role: "Backend Developer"
+
+  - name: "Megha"
+    email: "megha21work@gmail.com"
+    role: "Software Developer"
+
+  - name: "Piyush Kumar"
+    email: "Piyushkumar20033@gmail.com"
+    role: "AI/Software Developer"
+    
+
+github_repo: "https://github.com/piyushkumar/India-Runs"
+
+sandbox_link: "https://huggingface.co/spaces/piyushkumar/redrob-ranker"
+
+reproduce_command: "python3 rank.py --candidates ./candidates.jsonl --out ./output_bravo.csv"
+
+compute:
+  platform: "MacBook Air M1"
+  cpu_cores: 8
+  ram_gb: 16
+  python_version: "3.11.4"
+  os: "macOS 14.2"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: false
+  pre_computation_time_minutes: 0
+
+ai_tools_used:
+  - "Gemini"
+  - "Claude"
+
+ai_usage_summary: |
+  Used Gemini for coding assistant pair-programming. No candidate data was sent to any external API.
+
+methodology_summary: |
+  Hybrid ranker: (1) a corpus-wide TF-IDF semantic layer scores every candidate's
+  free text (headline, summary, role descriptions, skills) against JD-derived
+  positive/negative reference documents, so plain-language "Tier 5" candidates
+  who describe relevant work without JD buzzwords are still surfaced; (2) a
+  rule-based layer scores experience band, title fit, keyword skill match,
+  and career/company stability, and applies JD-explicit disqualifiers
+  (consulting-only, pure-research-only, CV/speech/robotics-without-NLP,
+  recent-LangChain-only AI experience, junior-title/seniority mismatch);
+  (3) a multiplicative behavioral-signal modifier (recency, response rate,
+  notice period, location/relocation fit); (4) an internal-consistency
+  honeypot filter (impossible skill/duration combos, date/duration mismatches,
+  YOE-vs-history mismatches) forces trap profiles to score 0. Honeypot rate
+  in the top 100 is 0% (self-checked at ranking time). Runtime ~65s / ~3GB RAM
+  for the full 100K pool on CPU, well inside the 5-min/16GB budget.
+
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  honeypot_check_done: true
+  reproduction_tested: true
