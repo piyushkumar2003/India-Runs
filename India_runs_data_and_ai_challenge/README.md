@@ -69,4 +69,5 @@ Sandbox link is required — a working hosted environment (HuggingFace Spaces, S
 # Asking for help
 
 If you find a bug in the bundle (e.g., schema doesn't match data, validator rejects valid format) please report it via the official hackathon support channel.
+or inform me at +91-8595558921
 Good luck.
